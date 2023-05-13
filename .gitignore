@@ -68,3 +68,4 @@ ios/Podfile.lock
 ios/tmp.xcconfig
 yarn.lock
 localConfig.js
+.env
