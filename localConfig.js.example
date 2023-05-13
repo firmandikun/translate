@@ -1,0 +1,7 @@
+/* eslint-disable prettier/prettier */
+const localConfig = {
+  DEBUG: false,                   // Boolean for turning on redux logger
+  developmentENV: 'stg',          // Set prod to use production API and stg for staging api
+};
+
+export default localConfig

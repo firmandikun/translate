@@ -9,6 +9,11 @@
 import React from 'react';
 import StackNavigator from './routes/AppRoutes';
 import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native';
+import * as setup from './setup';
+import axios from 'axios';
+
+// setting axios
+setup.setupAxios(axios);
 
 function App() {
   const navigationRef = useNavigationContainerRef();
