@@ -14,10 +14,10 @@ const HomePage = (props: any) => {
         <Text style={localStyles.textTitle}>Welcome to Kamus Veveu Evav</Text>
       </View>
       <View style={{ flexDirection: 'column', alignItems: 'center' }}>
-        <ButtonPrimary onPress={() => { }} style={{ width: width * 0.6 }} text="Daftar Kamus" />
-        <ButtonPrimary onPress={() => props.navigation.navigate('TranslateOptionsPage')} style={{ width: width * 0.6 }} text="Terjemahan Bahasa" />
-        <ButtonPrimary onPress={() => { }} style={{ width: width * 0.6 }} text="Tentang" />
-        <ButtonPrimary onPress={() => { }} style={{ width: width * 0.6 }} text="Bantuan" />
+        <ButtonPrimary onPress={() => props.navigation.navigate('TranslateOptionsPage')} style={{ width: width * 0.6 }} text="Daftar Kamus" />
+        <ButtonPrimary onPress={() => props.navigation.navigate('TranslatorPage')} style={{ width: width * 0.6 }} text="Terjemahan Bahasa" />
+        <ButtonPrimary onPress={() => props.navigation.navigate('AboutPage')} style={{ width: width * 0.6 }} text="Tentang" />
+        <ButtonPrimary onPress={() => props.navigation.navigate('HelpPage')} style={{ width: width * 0.6 }} text="Bantuan" />
         <ButtonPrimary onPress={() => BackHandler.exitApp()} style={{ width: width * 0.6 }} text="Keluar" />
       </View>
     </SafeAreaView>
@@ -26,7 +26,7 @@ const HomePage = (props: any) => {
 
 const localStyles = StyleSheet.create({
   textTitle: {
-    color: '#000',
+    color: '#F02A2A',
     fontFamily: fonts.bold,
     fontSize: fonts.md,
     textAlign: 'center',

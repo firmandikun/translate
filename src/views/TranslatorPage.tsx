@@ -8,11 +8,20 @@ const { width } = Dimensions.get('screen')
 
 const TranslatorPage = ({ navigation, route }: any) => {
   const [search, setSearch] = useState<string>('')
+  const [title, setTitle] = useState<string>('Indonesia-Kei')
 
   return (
     <SafeAreaView>
-      <View style={{ marginTop: 40, marginBottom: 100 }}>
-        <Text style={localStyles.textTitle}>{route?.params?.title}</Text>
+      <View style={{ marginBottom: 100 }}>
+        <View style={{ marginTop: 40, marginBottom: 30 }}>
+          <Text style={localStyles.textTitle}>{route?.params?.title || title}</Text>
+        </View>
+        {!route?.params?.title ? (
+          <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 10, marginBottom: 20 }}>
+            <ButtonPrimary onPress={() => setTitle('Kel-Indonesia')} text="Kel-Indonesia" />
+            <ButtonPrimary onPress={() => setTitle('Indonesia-Kei')} text="Indonesia-Kei" />
+          </View>
+        ) : null}
       </View>
       <View style={{ flexDirection: 'column', alignItems: 'center' }}>
         <TextInput
