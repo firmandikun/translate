@@ -1,16 +1,16 @@
 import localConfig from './localConfig.js';
-import Config from 'react-native-config';
+// import Config from 'react-native-config';
 
 const config = {
   DEBUG: localConfig.DEBUG,
   developmentENV: localConfig.developmentENV || 'stg',
-  apiURL: 'https://localhost.com/',
+  apiURL: 'https://hootdev.my.id',
 
   // STAGING CONFIG
-  stgApiURL: 'https://staging-api-casion.belum.live/user/api/v1',
+  stgApiURL: 'https://hootdev.my.id',
 
   // Version Stg
-  versionApp: Config.APP_VERSION_SEMANTIC,
+  // versionApp: Config.APP_VERSION_SEMANTIC,
 };
 
 export default config;

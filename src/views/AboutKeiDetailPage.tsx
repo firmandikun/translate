@@ -10,7 +10,7 @@ const { width } = Dimensions.get('screen')
 const AboutKeiDetailPage = (props: any) => {
   return (
     <SafeAreaView>
-      <View style={{ marginTop: 40, marginBottom: 100 }}>
+      <View style={{ marginTop: 40, marginBottom: 40 }}>
         <Text style={localStyles.textTitle}>Tentang Kei</Text>
       </View>
       <View style={{ flexDirection: 'column', alignItems: 'center' }}>

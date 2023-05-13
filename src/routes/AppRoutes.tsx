@@ -7,10 +7,12 @@ import AboutPage from '../views/AboutPage'
 import HelpPage from '../views/HelpPage'
 import AboutDetailPage from '../views/AboutDetailPage'
 import AboutKeiDetailPage from '../views/AboutKeiDetailPage'
+import DayMonthNamePage from '../views/DayMonthNamePage'
 
 export type RootStackParamList = {
   HomePage: any;
   TranslateOptionsPage: any
+  DayMonthNamePage: any
   TranslatorPage: any
   AboutPage: any
   HelpPage: any
@@ -25,6 +27,7 @@ const StackNavigator = () => {
     <Stack.Navigator screenOptions={{ headerShown: false, animation: 'none' }}>
       <Stack.Screen name="HomePage" component={HomePage} />
       <Stack.Screen name="TranslateOptionsPage" component={TranslateOptionsPage} />
+      <Stack.Screen name="DayMonthNamePage" component={DayMonthNamePage} />
       <Stack.Screen name="TranslatorPage" component={TranslatorPage} />
       <Stack.Screen name="AboutPage" component={AboutPage} />
       <Stack.Screen name="AboutDetailPage" component={AboutDetailPage} />

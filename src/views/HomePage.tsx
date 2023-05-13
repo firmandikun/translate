@@ -8,6 +8,7 @@ import ButtonPrimary from '../components/ButtonPrimary'
 const { width } = Dimensions.get('screen')
 
 const HomePage = (props: any) => {
+  console.log('dwadawdawd');
   return (
     <SafeAreaView>
       <View style={{ marginTop: 40, marginBottom: 100 }}>
