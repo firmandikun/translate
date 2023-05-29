@@ -16,11 +16,11 @@ const TranslateOptionsPage = (props: any) => {
   return (
     <SafeAreaView>
       <View style={{ marginTop: 40, marginBottom: 100 }}>
-        <Text style={localStyles.textTitle}>Kamus Veveu Evav</Text>
+        <Text style={localStyles.textTitle}>Kamus Vaveu Evav</Text>
       </View>
       <View style={{ flexDirection: 'column', alignItems: 'center' }}>
-        <ButtonPrimary onPress={() => handlePressButton('kei')} style={{ width: width * 0.6 }} text="Kel-Indonesia" />
-        <ButtonPrimary onPress={() => handlePressButton('indonesia')} style={{ width: width * 0.6 }} text="Indonesia-Kei" />
+        <ButtonPrimary onPress={() => props.navigation.navigate('ListLangue')} style={{ width: width * 0.6 }} text="Kel-Indonesia" />
+        <ButtonPrimary onPress={() => props.navigation.navigate('ListLangueIndo')} style={{ width: width * 0.6 }} text="Indonesia-Kei" />
         <ButtonPrimary onPress={() => props.navigation.navigate('DayMonthNamePage')} style={{ width: width * 0.6 }} text="Nama Hari dan Bulan" />
         <ButtonPrimary onPress={() => props.navigation.goBack()} style={{ width: width * 0.6 }} text="Kembali" />
       </View>

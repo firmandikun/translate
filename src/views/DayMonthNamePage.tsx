@@ -26,8 +26,6 @@ const DayMonthNamePage = (props: any) => {
     getMonthName.getRequest(URL.TRANSLATE_MONTH_NAME, {})
   }
 
-  console.log('dayName', dayName, monthName)
-
   return (
     <SafeAreaView>
       <ScrollView>

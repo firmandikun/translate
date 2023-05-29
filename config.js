@@ -1,4 +1,4 @@
-import localConfig from './localConfig.js';
+import localConfig from './localConfig';
 // import Config from 'react-native-config';
 
 const config = {

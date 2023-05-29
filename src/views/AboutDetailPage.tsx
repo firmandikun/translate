@@ -9,15 +9,23 @@ const { width } = Dimensions.get('screen')
 
 const AboutDetailPage = (props: any) => {
   return (
-    <SafeAreaView>
-      <View style={{ marginTop: 40, marginBottom: 40 }}>
+    <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} >
+     <View style={{ position: 'absolute', top: 20, }} >
+     <View style={{ marginTop: 40, marginBottom: 40 }}>
         <Text style={localStyles.textTitle}>Tentang</Text>
       </View>
       <View style={{ flexDirection: 'column', alignItems: 'center' }}>
         <Text style={{ color: '#000', marginHorizontal: 10 }}>
           Aplikasi Kamus Bahasa Kei merupakan Aplikasi yang digunakan untuk mencari serta mempelajari kosakata dalam tingkatan bahasa kei. Aplikasi ini sangat praktis, efisien, dan mudah digunakan dalam belajar bahasa kei kamus dalam bahasa kei ditulis sesuai dengan penyebutan atau ejaan dalam bahasa kei contact us lindakaleann@gmail.com
         </Text>
-        <ButtonPrimary onPress={() => props.navigation.goBack()} style={{ width: width * 0.6 }} text="Kembali" />
+      </View>
+     </View>
+
+      <View style={{ position: 'absolute', bottom: 20, }} >
+        <Text style={{ color: '#000', marginHorizontal: 10 }}>
+            contact us lindakaleann@gmail.com
+          </Text>
+          <ButtonPrimary onPress={() => props.navigation.goBack()} style={{ width: width * 0.6 }} text="Kembali" />
       </View>
     </SafeAreaView>
   );

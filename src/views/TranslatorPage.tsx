@@ -18,8 +18,6 @@ const TranslatorPage = ({ navigation, route }: any) => {
     postTranslate.getRequest(URL.TRANSLATE_WORD, {language: fromLanguage, search}, {});
   }
 
-  console.log('test', translate);
-
   const handleOnSearch = () => {
     if (route?.params?.title) {
       postTranslateData(route?.params?.title, search)
@@ -77,7 +75,7 @@ const TranslatorPage = ({ navigation, route }: any) => {
               padding: 5,
             }}
           >
-            <Text style={{ color: '#000', textAlign: 'center' }}>{translate?.data?.result?.type === 'recomendation' ? 'Kata tidak ditemukan, mungkin maksud anda' : 'Menampilkan hasil pencarian kata'}</Text>
+           <Text style={{ color: '#000', textAlign: 'center' }}>{translate?.data?.result?.type === 'recomendation' ? 'Kata tidak ditemukan, mungkin maksud anda' : 'Menampilkan hasil pencarian kata'}</Text>
           </View>
           {translate?.data?.result?.result?.map((item: any, index: number) => (
             <View key={index} style={{ borderColor: colors.grey, borderTopWidth: 1, padding: 5 }}>

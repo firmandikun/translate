@@ -7,4 +7,5 @@ export const URL = {
   TRANSLATE_WORD: `${API}/api/translate`,
   TRANSLATE_DAY_NAME: `${API}/api/translate/hari`,
   TRANSLATE_MONTH_NAME: `${API}/api/translate/bulan`,
+  LIST_LANGUE: `${API}/api/list`,
 };
