@@ -4,16 +4,20 @@ import { Dimensions, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { colors, fonts } from '../styles'
 import ButtonPrimary from '../components/ButtonPrimary'
+import { Header } from '../components/Header'
 
 const { width } = Dimensions.get('screen')
 
 const HelpPage = (props: any) => {
   return (
     <SafeAreaView>
+       <View style={{ height: 70, width: '100%', backgroundColor: '#4480E5', padding: 16, borderBottomStartRadius: 20 }} >
+        <Header onHome onPress={() => props.navigation.navigate('HomePage')} />
+        </View>
       <View style={{ marginTop: 40, marginBottom: 40 }}>
         <Text style={localStyles.textTitle}>Bantuan</Text>
       </View>
-      <View style={{ flexDirection: 'column', alignItems: 'center' }}>
+      <View style={{ flexDirection: 'column', alignItems: 'center', paddingHorizontal: 16 }}>
         <Text style={localStyles.textDesc}>
           pengucapan dalam bahasa kei biasanya terdapat penekanan pada suku kata terakhir. bila hanya satu kata yang diucapkan maka biasanya penekanan (ditahan) pada satu sampai empat huruf terakhir. perhatikan contoh berikut:</Text>
           <Text style={localStyles.textDesc}>huruf yang berwarna merah ditahan sebentar atau panjang tekanannya</Text>
@@ -25,8 +29,6 @@ const HelpPage = (props: any) => {
             Untuk O (anda), U (dia), Im (Kalian), Am (Kami), dan It (kita) dipakai dalam semua tingkat sosial.
           </Text>
           <Text style={localStyles.textDesc}>tanda (-) dalam kosakata bahasa kei berguna untuk memberi spasi atau jeda dalam penyebutanya agar sesuai dengan ejaan bahasa kei</Text>
-        
-        <ButtonPrimary onPress={() => props.navigation.goBack()} style={{ width: width * 0.6 }} text="Kembali" />
       </View>
     </SafeAreaView>
   );

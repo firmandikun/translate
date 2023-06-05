@@ -1,28 +1,34 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { fonts } from '../styles'
 import ButtonPrimary from '../components/ButtonPrimary'
+import { Header } from '../components/Header'
+import { IcDate, IcHelp, IcInformation, IcList, IcTranslate } from '../assets'
 
 const { width } = Dimensions.get('screen')
 
 const TranslateOptionsPage = (props: any) => {
 
-  const handlePressButton = (title: string) => {
-    props.navigation.navigate('TranslatorPage', { title })
-  };
-
   return (
     <SafeAreaView>
-      <View style={{ marginTop: 40, marginBottom: 100 }}>
-        <Text style={localStyles.textTitle}>Kamus Vaveu Evav</Text>
-      </View>
-      <View style={{ flexDirection: 'column', alignItems: 'center' }}>
-        <ButtonPrimary onPress={() => props.navigation.navigate('ListLangue')} style={{ width: width * 0.6 }} text="Kel-Indonesia" />
-        <ButtonPrimary onPress={() => props.navigation.navigate('ListLangueIndo')} style={{ width: width * 0.6 }} text="Indonesia-Kei" />
-        <ButtonPrimary onPress={() => props.navigation.navigate('DayMonthNamePage')} style={{ width: width * 0.6 }} text="Nama Hari dan Bulan" />
-        <ButtonPrimary onPress={() => props.navigation.goBack()} style={{ width: width * 0.6 }} text="Kembali" />
+       <View style={{ height: 70, width: '100%', backgroundColor: '#4480E5', padding: 16, borderBottomStartRadius: 20 }} >
+        <Header onHome  onPress={() => props.navigation.navigate('HomePage')} />
+        </View>
+       <View style={{ flex: 1, flexDirection: 'row', alignItems: 'stretch', justifyContent: 'flex-start', padding: 10, flexWrap: 'wrap', rowGap: 15, columnGap: 15, marginTop: 20 }}>
+        <TouchableOpacity style={localStyles.column} onPress={() => props.navigation.navigate('ListLangue')} >
+          <Image source={IcList} style={{ width: 40, height: 32 }} />
+          <Text style={{fontFamily: fonts.bold, marginTop: 20, textAlign: 'center'}}>{`Kosakata \n Kei-Indonesia`}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={localStyles.column} onPress={() => props.navigation.navigate('ListLangueIndo')}>
+          <Image source={IcList} style={{ width: 40, height: 32 }} />
+          <Text style={{fontFamily: fonts.bold, marginTop: 20, textAlign: 'center'}}>{`Kosakata \n Indonesia-Kei`}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={localStyles.column} onPress={() => props.navigation.navigate('DayMonthNamePage')}>
+          <Image source={IcDate} style={{ width: 40, height: 43 }} />
+          <Text style={{fontFamily: fonts.bold, marginTop: 20, textAlign: 'center'}}>Nama Hari dan Bulan</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -35,6 +41,15 @@ const localStyles = StyleSheet.create({
     fontSize: fonts.md,
     textAlign: 'center',
   },
+  column: {
+    width: '30%',
+    height: 130,
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius :10
+  }
 });
 
 export default TranslateOptionsPage;

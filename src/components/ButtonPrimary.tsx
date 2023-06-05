@@ -4,9 +4,10 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { colors, fonts } from '../styles';
 
 const ButtonPrimary = (props: any) => {
-  const { onPress, text, style } = props;
+  const { onPress, text, style, active } = props;
+  const buttonStyle = active ? localStyles.buttonActive : localStyles.buttonPrimary;
   return (
-    <TouchableOpacity onPress={onPress} style={localStyles.buttonPrimary}>
+    <TouchableOpacity onPress={onPress} style={buttonStyle}>
       <Text style={[localStyles.textButton, style]}>{text}</Text>
     </TouchableOpacity>
   );
@@ -20,8 +21,15 @@ const localStyles = StyleSheet.create({
     border: 1,
     borderRadius: 4,
   },
+  buttonActive: {
+    backgroundColor: colors.grey, // Ganti dengan warna latar belakang tombol aktif
+    padding: 10,
+    marginTop: 20,
+    border: 1,
+    borderRadius: 4,
+  },
   textButton: {
-    color: '#FFF',
+    color: '#FFFFFF',
     textAlign: 'center',
     fontFamily: fonts.bold,
   },

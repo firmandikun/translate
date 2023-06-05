@@ -8,7 +8,7 @@ export const dimensions = {
 };
 
 export const colors = {
-  primary: '#F02A2A', // light-black
+  primary: '#4480E5', // light-black
   secondary: '#EEEEEE', // orange
   tertiary: '#008ED1', // blue,
   lightTertiary: '#00A6F5', // light-blue,
@@ -19,7 +19,7 @@ export const colors = {
 export const fonts = {
   sm: 12,
   md: 18,
-  lg: 28,
+  lg: 35,
   regular: 'Roboto-Regular',
   medium: 'Roboto-Medium',
   bold: 'Roboto-Bold',

@@ -6,6 +6,7 @@ import { fonts } from '../styles'
 import ButtonPrimary from '../components/ButtonPrimary'
 import { useGet } from '../hooks/useRequest'
 import { URL } from '../config/api'
+import { Header } from '../components/Header'
 
 const { width } = Dimensions.get('screen')
 
@@ -28,12 +29,16 @@ const DayMonthNamePage = (props: any) => {
 
   return (
     <SafeAreaView>
+       <View style={{ height: 70, width: '100%', backgroundColor: '#4480E5', padding: 16, borderBottomStartRadius: 20 }}>
+        <Header onHome onPress={() => props.navigation.navigate('TranslateOptionsPage')} />
+      </View>
       <ScrollView>
-        <View style={{ marginTop: 40, marginBottom: 40 }}>
+        <View style={{ marginTop: 20, marginBottom: 20 }}>
           <Text style={localStyles.textTitle}>Nama Hari dan Bulan</Text>
         </View>
-        <View style={{ flexDirection: 'column', alignItems: 'center' }}>
-          <Text style={{ ...localStyles.textDesc, fontSize: 20 }}>Nama Hari</Text>
+        <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginBottom: 100 }}>
+          <Text style={{ ...localStyles.textDesc, fontSize: 20, fontFamily: fonts.bold, marginLeft: 20 }}>Nama Hari</Text>
+          <View style={localStyles.bgContainer} >
           {dayName?.isLoading ? (
             <Text style={localStyles.textDesc}>Loading...</Text>
           ) : (
@@ -41,7 +46,9 @@ const DayMonthNamePage = (props: any) => {
               <Text key={index} style={localStyles.textDesc}>{item.indonesia} = {item.kei}</Text>
             ))
           )}
-          <Text style={{ ...localStyles.textDesc, fontSize: 20, marginTop: 30 }}>Nama Bulan</Text>
+          </View>
+          <Text style={{ ...localStyles.textDesc, fontSize: 20, marginTop: 10, fontFamily: fonts.bold, marginLeft: 20 }}>Nama Bulan</Text>
+          <View style={localStyles.bgContainer} >
           {dayName?.isLoading ? (
             <Text style={localStyles.textDesc}>Loading...</Text>
           ) : (
@@ -49,8 +56,6 @@ const DayMonthNamePage = (props: any) => {
               <Text key={index} style={localStyles.textDesc}>{item.indonesia} = {item.kei}</Text>
             ))
           )}
-          <View style={{marginBottom: 20}}>
-            <ButtonPrimary onPress={() => props.navigation.goBack()} style={{ width: width * 0.6 }} text="Kembali" />
           </View>
         </View>
       </ScrollView>
@@ -62,10 +67,21 @@ const localStyles = StyleSheet.create({
   textTitle: {
     color: '#000',
     fontFamily: fonts.bold,
-    fontSize: fonts.md,
+    fontSize: 25,
     textAlign: 'center',
   },
-  textDesc: { color: '#000', marginHorizontal: 10, alignSelf: 'flex-start', marginBottom: 10 }
+  textDesc: { color: '#000', marginHorizontal: 10, alignSelf: 'flex-start', marginBottom: 10 },
+
+  bgContainer: {
+    flexDirection: 'column',
+    marginBottom: 20,
+    gap: 2,
+    width: width * 0.9,
+    backgroundColor: '#C6D9FA',
+    padding: 10,
+  }
+
+  
 });
 
 export default DayMonthNamePage;

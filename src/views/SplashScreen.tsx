@@ -8,14 +8,14 @@ type SplashProps = {
   navigation: any;
 };
 
-const Splash: React.FC<SplashProps> = ({navigation}) => {
+const Splash: React.FC<SplashProps> = (props) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('HomePage');
+      props.navigation.navigate('HomePage');
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, [navigation]);
+  }, []);
 
   return (
     <View style={styles.pages}>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.primary,
+    backgroundColor: '#4480E5',
   },
   ilustrasi: {
     position: 'absolute',
