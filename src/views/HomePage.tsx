@@ -22,7 +22,7 @@ const HomePage = (props: any) => {
       <View style={{ flex: 1, flexDirection: 'row', alignItems: 'stretch', justifyContent: 'flex-start', padding: 10, flexWrap: 'wrap', rowGap: 15, columnGap: 15 }}>
         <TouchableOpacity style={localStyles.column} onPress={() => props.navigation.navigate('TranslateOptionsPage')}>
           <Image source={IcList} style={{ width: 40, height: 32 }} />
-          <Text style={{  }}>Kamus</Text>
+          <Text style={localStyles.textNavigation}>Kamus</Text>
         </TouchableOpacity>
         <TouchableOpacity style={localStyles.column} onPress={() => props.navigation.navigate('TranslatorPage')}>
           <Image source={IcTranslate} style={{ width: 45, height: 35, }} />
