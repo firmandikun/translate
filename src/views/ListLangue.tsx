@@ -7,6 +7,7 @@ import { useGet } from '../hooks/useRequest'
 import { URL } from '../config/api'
 import ButtonPrimary from '../components/ButtonPrimary'
 import { Header } from '../components/Header'
+import { useNavigation } from '@react-navigation/native'
 
 const { width } = Dimensions.get('screen')
 
@@ -50,12 +51,34 @@ const ListLangue = (props: any) => {
         setFilteredData(filtered);
         setActiveLetter(letter);
       };
+
+      const navigation = useNavigation<any>();
+
+      const goBack = () => {
+        navigation.goBack();
+      };
+    
+    
   
     return (
-      <SafeAreaView>
-        <View style={{ height: 70, width: '100%', backgroundColor: '#4480E5', padding: 16, borderBottomStartRadius: 20 }} >
-        <Header onHome  onPress={() => props.navigation.navigate('TranslateOptionsPage')} />
-        </View>
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#FBFDFF' }} >
+        <View style={{
+        height: 70,
+        width: '100%',
+        backgroundColor: colors.primary,
+        padding: 16,
+        borderBottomStartRadius: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+        elevation: 4,
+      }}>
+        <Header onHome onPress={() => navigation.goBack()} />
+      </View>
         <View style={{ marginTop: 20, padding: 16 }}>
           <Text style={styles.textTitle}>Kei - Indonesia</Text>
           <View style={styles.buttonContainer}>
@@ -134,6 +157,7 @@ const styles = StyleSheet.create({
         // flex: 1,
     height: 200,
     marginTop: 10,
+    overflow: 'visible'
     
     },
     row: {
@@ -144,7 +168,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: colors.primary,
         padding: 10,
-        color: '#000',
+        color: colors.grey,
         fontWeight: '700'
     },
 });

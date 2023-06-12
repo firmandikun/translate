@@ -7,6 +7,7 @@ import { useGet } from '../hooks/useRequest';
 import { URL } from '../config/api';
 import ButtonPrimary from '../components/ButtonPrimary';
 import { Header } from '../components/Header';
+import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('screen');
 
@@ -49,10 +50,28 @@ const ListLangueIndo = (props: any) => {
     setActiveLetter(letter);
   };
 
+  const navigation = useNavigation();
+
+  
+
   return (
-    <SafeAreaView>
-      <View style={{ height: 70, width: '100%', backgroundColor: '#4480E5', padding: 16, borderBottomStartRadius: 20 }}>
-        <Header onHome onPress={() => props.navigation.navigate('TranslateOptionsPage')} />
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#FBFDFF' }} >
+      <View style={{
+        height: 70,
+        width: '100%',
+        backgroundColor: colors.primary,
+        padding: 16,
+        borderBottomStartRadius: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+        elevation: 4,
+      }}>
+        <Header onHome onPress={() => navigation.goBack()} />
       </View>
       <View style={{ marginTop: 20, padding: 16 }}>
         <Text style={styles.textTitle}>Indonesia - Kei</Text>
@@ -69,38 +88,39 @@ const ListLangueIndo = (props: any) => {
             );
           })}
         </View>
-        <ScrollView>
-          <View style={styles.table}>
-            {filteredData &&
-              filteredData.map((items: any, index: any) => {
-                return (
-                  <View key={index}>
-                    <Text
-                      style={{
-                        fontWeight: '700',
-                        marginBottom: 10,
-                        marginTop: 5,
-                        color: '#000',
-                        fontSize: fonts.lg,
-                      }}
-                    >
-                      {items?.title?.charAt(0).toUpperCase() + items?.title.slice(1)}
-                    </Text>
-                    {items?.data?.map((item: any, indexs: any) => (
-                      <View style={styles.row} key={indexs}>
-                        <Text style={styles.cell}>
+        <View style={styles.table}>
+              {filteredData &&
+                filteredData.map((items: any, index: any) => {
+                  return (
+                    <View key={index}>
+                      <Text
+                        style={{
+                          fontWeight: '700',
+                          marginBottom: 10,
+                          marginTop: 5,
+                          color: '#000',
+                          fontSize: fonts.lg,
+                        }}
+                      >
+                        {items?.title?.charAt(0).toUpperCase() +
+                          items?.title.slice(1)}
+                      </Text>
+                       <ScrollView>
+                       {items?.data?.map((item: any, indexs: any) => (
+                        <View style={styles.row} key={indexs}>
+                          <Text style={styles.cell}>
                           {item?.indonesia?.charAt(0).toUpperCase() + item?.indonesia.slice(1)}
                         </Text>
                         <Text style={styles.cell}>
                           {item?.kei?.charAt(0).toUpperCase() + item?.kei.slice(1)}
                         </Text>
-                      </View>
-                    ))}
-                  </View>
-                );
-              })}
-          </View>
-        </ScrollView>
+                        </View>
+                      ))}
+                       </ScrollView>
+                    </View>
+                  );
+                })}
+            </View>
       </View>
     </SafeAreaView>
   );
@@ -122,8 +142,9 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   table: {
-    height: 250,
+    height: 200,
     marginTop: 10,
+    overflow: 'visible'
   },
   row: {
     flexDirection: 'row',

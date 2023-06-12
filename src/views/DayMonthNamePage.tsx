@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { fonts } from '../styles'
+import { colors, fonts } from '../styles'
 import ButtonPrimary from '../components/ButtonPrimary'
 import { useGet } from '../hooks/useRequest'
 import { URL } from '../config/api'
@@ -28,9 +28,23 @@ const DayMonthNamePage = (props: any) => {
   }
 
   return (
-    <SafeAreaView>
-       <View style={{ height: 70, width: '100%', backgroundColor: '#4480E5', padding: 16, borderBottomStartRadius: 20 }}>
-        <Header onHome onPress={() => props.navigation.navigate('TranslateOptionsPage')} />
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#FBFDFF' }} >
+       <View style={{
+        height: 70,
+        width: '100%',
+        backgroundColor: colors.primary,
+        padding: 16,
+        borderBottomStartRadius: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+        elevation: 4,
+      }}>
+        <Header onHome onPress={() => props.navigation.goBack()} />
       </View>
       <ScrollView>
         <View style={{ marginTop: 20, marginBottom: 20 }}>
@@ -79,6 +93,16 @@ const localStyles = StyleSheet.create({
     width: width * 0.9,
     backgroundColor: '#C6D9FA',
     padding: 10,
+    shadowColor: colors.grey,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+
+    elevation: 2,
+    borderRadius: 10
   }
 
   

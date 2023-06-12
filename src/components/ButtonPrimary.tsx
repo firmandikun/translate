@@ -20,13 +20,29 @@ const localStyles = StyleSheet.create({
     marginTop: 20,
     border: 1,
     borderRadius: 4,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,    
+    elevation: 4,
   },
   buttonActive: {
-    backgroundColor: colors.grey, // Ganti dengan warna latar belakang tombol aktif
+    backgroundColor: colors.secondary, // Ganti dengan warna latar belakang tombol aktif
     padding: 10,
     marginTop: 20,
     border: 1,
     borderRadius: 4,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,    
+    elevation: 4,
   },
   textButton: {
     color: '#FFFFFF',

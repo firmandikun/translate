@@ -1,27 +1,29 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { colors } from '../styles';
 import { Logo } from '../assets/Images';
-// import { Text } from 'react-native-svg';
+import { useNavigation } from '@react-navigation/native';
 
 type SplashProps = {
   navigation: any;
 };
 
 const Splash: React.FC<SplashProps> = (props) => {
+  const navigation = useNavigation<any>();
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      props.navigation.navigate('HomePage');
+      navigation.replace('Main');
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [navigation]);
 
   return (
     <View style={styles.pages}>
       <View style={styles.ilustrasi}>
         <Image source={Logo} style={{ width: 90, height: 90, marginBottom: 10 }} />
-        <Text style={styles.title} > Aplikasi translate </Text>
+        <Text style={styles.title}>Aplikasi Kamus vaveu evav</Text>
       </View>
     </View>
   );
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#4480E5',
+    backgroundColor: colors.primary,
   },
   ilustrasi: {
     position: 'absolute',
@@ -43,12 +45,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center'
-    // right: 0,
+    justifyContent: 'center',
   },
-
   title: {
-    color:'white',
-    fontSize: 20
-  }
+    color: 'white',
+    fontSize: 20,
+  },
 });

@@ -8,11 +8,11 @@ export const dimensions = {
 };
 
 export const colors = {
-  primary: '#4480E5', // light-black
-  secondary: '#EEEEEE', // orange
+  primary: '#698DFE', // light-black
+  secondary: '#D1D2E8', // orange
   tertiary: '#008ED1', // blue,
   lightTertiary: '#00A6F5', // light-blue,
-  grey: '#555761',
+  grey: '#171719',
   error: '#F3251D', // red errors
 };
 
