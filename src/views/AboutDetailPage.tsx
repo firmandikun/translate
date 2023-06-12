@@ -33,7 +33,7 @@ const AboutDetailPage = (props: any) => {
           <Text style={localStyles.textTitle}>Tentang</Text>
         </View>
         <View style={{ flexDirection: 'column', alignItems: 'center', height: 410 }}>
-          <Text style={{ color: '#000', marginHorizontal: 10 }}>
+          <Text style={{ color: '#000', marginHorizontal: 10 , textAlign: 'justify'}}>
             Aplikasi Kamus Bahasa Kei merupakan Aplikasi yang digunakan untuk mencari serta mempelajari kosakata dalam tingkatan bahasa kei. Aplikasi ini sangat praktis, efisien, dan mudah digunakan dalam belajar bahasa kei kamus dalam bahasa kei ditulis sesuai dengan penyebutan atau ejaan dalam bahasa kei.
           </Text>
         </View>
