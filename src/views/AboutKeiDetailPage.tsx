@@ -4,7 +4,7 @@ import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-nat
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { colors, fonts } from '../styles'
 import ButtonPrimary from '../components/ButtonPrimary'
-import { KeiImage } from '../assets'
+import { Slide3 } from '../assets'
 import { Header } from '../components/Header'
 
 const { width } = Dimensions.get('screen')
@@ -34,7 +34,7 @@ const AboutKeiDetailPage = (props: any) => {
         <Text style={localStyles.textTitle}>Tentang Kei</Text>
       </View>
         <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }} >
-        <Image source={KeiImage} style={{ width: 320, height: 320, marginBottom: 20, marginTop: 20, borderRadius: 10 }} />
+        <Image source={Slide3} style={{ width: 320, height: 320, marginBottom: 20, marginTop: 20, borderRadius: 10 }} />
         </View>
       <View style={{ flexDirection: 'column', alignItems: 'center' , marginBottom: 120, paddingHorizontal: 8}}>
         <Text style={{ color: '#000', marginHorizontal: 10, textAlign: 'justify' }}>

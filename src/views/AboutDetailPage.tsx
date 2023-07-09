@@ -43,8 +43,6 @@ const AboutDetailPage = (props: any) => {
           </Text>
         </View>
       </View>
-
-
     </SafeAreaView>
   );
 };
